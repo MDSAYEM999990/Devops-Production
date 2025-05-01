@@ -1,0 +1,57 @@
+vault-production-setup/
+├── modules/
+│   ├── vpc/
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   └── variables.tf
+│   ├── vault_cluster/
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   └── variables.tf
+│   ├── kms/
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   └── variables.tf
+│   ├── s3_logs/
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   └── variables.tf
+│   └── iam_roles/
+│       ├── main.tf
+│       ├── outputs.tf
+│       └── variables.tf
+├── scripts/
+│   ├── packer/
+│   │   ├── vault-ami.json
+│   │   ├── provisioning.sh
+│   │   └── install-vault.sh
+│   ├── ansible/
+│   │   ├── playbook.yml
+│   │   ├── roles/
+│   │   │   ├── vault/
+│   │   │   │   ├── tasks/
+│   │   │   │   │   ├── configure-vault.yml
+│   │   │   │   │   ├── enable-raft-storage.yml
+│   │   │   │   │   └── enable-kms-auto-unseal.yml
+│   │   │   │   └── templates/
+│   │   │   │       └── config.hcl.j2
+│   └── vault-agent/
+│       ├── agent-config.hcl
+│       └── sidecar.sh
+├── config/
+│   ├── config.hcl
+│   └── vault-cert/
+│       ├── vault.crt
+│       └── vault.key
+├── terraform/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   ├── backend.tf
+│   └── providers.tf
+├── ci-cd/
+│   ├── Jenkinsfile
+│   └── github-actions/
+│       ├── vault-secrets.yml
+│       └── deploy-vault.yml
+└── README.md
