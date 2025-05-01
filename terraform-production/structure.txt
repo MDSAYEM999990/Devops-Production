@@ -1,0 +1,53 @@
+
+//https://github.com/MDSAYEM999990/Devops-Engineer.git this way structure create with full code in this branch
+
+
+
+terraform-project/
+├── environments/
+│   ├── dev/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── backend.tf
+│   │   └── terraform.tfvars
+│   ├── staging/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── backend.tf
+│   │   └── terraform.tfvars
+│   └── prod/
+│       ├── main.tf
+│       ├── variables.tf
+│       ├── backend.tf
+│       └── terraform.tfvars
+
+├── modules/
+│   ├── vpc/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── ec2/
+│   ├── rds/
+│   ├── s3/
+│   ├── kms/
+│   ├── iam/
+│   └── vault/
+
+├── global-resources/
+│   ├── s3-backend/
+│   ├── dynamodb-locks/
+│   └── kms-root-keys/
+
+├── scripts/
+│   └── tf-wrapper.sh             # Terraform wrapper script with env switching
+
+├── ci-cd/
+│   ├── Jenkinsfile
+│   └── github-actions/
+│       └── terraform-deploy.yml
+
+├── .terraform.lock.hcl
+├── .tflint.hcl                   # Lint config
+├── .pre-commit-config.yaml       # Formatting & validation
+├── README.md
+└── Makefile                      # Terraform commands automation
