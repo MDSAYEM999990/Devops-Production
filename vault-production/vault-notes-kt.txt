@@ -86,7 +86,7 @@ $ vault operator init
 		Unseal Key 4: ayUNVw0rqrTFjPYSLPTAEHEb5sHaIROZupEFHXT7XuCS
 		Unseal Key 5: 6O34FCuPwTV4aTd8xUP2+avtUDwkeqf70pakLCy09c3U
 
-		Initial Root Token: hvs.0LEwmKfdK5IPzZBQEQWDh4MF
+		Initial Root Token: 
 
 		Vault initialized with 5 key shares and a key threshold of 3. Please securely
 		distribute the key shares printed above. When the Vault is re-sealed,
@@ -104,7 +104,7 @@ $ vault operator init
 
 
 
-export VAULT_TOKEN=hvs.9g308xTUlo174CVRuK5YWKRQ
+export VAULT_TOKEN=
 
 vault operator unseal Ap3DaTeuyA2vTHCvMQ3PvMTvuRexcx3KHmI8BRFu4SA6
 vault operator unseal qJl1pBrMtbirsfx2mDbfbCnbhzcGlyUhAjo8nm0b9LLB
@@ -256,14 +256,14 @@ vault write auth/token/roles/dexter   allowed_policies="policy1, policy2, policy
 vault token create -role=dexter
 
 
-export VAULT_TOKEN="hvs.CAESIJpDr4881YGbpXkam9hhIAwS-XDkaKRW_q-V47Wb1HX4Gh4KHGh2cy5BTVJqSktmelYwb2FjNTFrN3VXbkpLeDI"
+export VAULT_TOKEN=""
 vault token lookup
 
 vault login <your token>
 
 
 vault path-help secret/data/appdev-kv/*
-vault token capabilities hvs.CAESIEe3sxRCQbCHuCNHDTzPDAj3Uf_svq60-2gTONwgnTvIGh4KHGh2cy5hWHRESEFJTlpiRUJ1SDlySmZpQ3V3aGY secret/data/appdev-kv/*
+vault token capabilities  secret/data/appdev-kv/*
 
 vault token revoke <your token>
 
@@ -323,7 +323,7 @@ vault write -force auth/approle/role/jenkins-role/secret-id		#  like password - 
 
 
 vault write auth/approle/login role_id="9c7507c7-b246-219f-1e25-a388e8926eb8" secret_id="5f499517-44df-6532-9397-1fa68018ebf9"
-export VAULT_TOKEN="hvs.CAESIAeksGXWZugv-EosIY8QepRIDVGKAscqOgTqw0s4RsIVGh4KHGh2cy5BT2hXMXJoZExOMG1QbmZEa1Y5MldmWm0"
+export VAULT_TOKEN=""
 vault token lookup
 
 # or
