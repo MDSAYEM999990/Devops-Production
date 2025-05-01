@@ -1,0 +1,53 @@
+ansible-project/
+├── ansible.cfg
+├── requirements.yml              # External roles/collections
+├── README.md
+
+├── inventories/
+│   ├── dev/
+│   │   ├── hosts.yaml
+│   │   └── group_vars/
+│   ├── staging/
+│   │   ├── hosts.yaml
+│   │   └── group_vars/
+│   └── prod/
+│       ├── hosts.yaml
+│       └── group_vars/
+
+├── group_vars/                   # Common to all environments
+│   ├── all.yml
+│   └── vault.yml                 # Encrypted secrets
+
+├── host_vars/                    # Per-host variables
+│   ├── host1.yml
+│   └── host2.yml
+
+├── roles/
+│   ├── common/
+│   ├── web/
+│   ├── db/
+│   └── vault/
+│       ├── tasks/
+│       ├── handlers/
+│       ├── templates/
+│       ├── files/
+│       ├── defaults/
+│       └── meta/
+
+├── playbooks/
+│   ├── site.yml                  # Main entry point
+│   ├── deploy.yml
+│   ├── update.yml
+│   └── vault-init.yml
+
+├── templates/                    # Jinja2 templates
+│   └── vault_config.hcl.j2
+
+├── files/                        # Static config files
+│   └── ca.pem
+
+├── ci-cd/
+│   ├── Jenkinsfile
+│   └── github-actions/
+│       ├── lint.yml
+│       └── run-ansible-playbook.yml
