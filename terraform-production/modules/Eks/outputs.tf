@@ -1,42 +1,31 @@
-output "cluster_id" {
-  description = "EKS cluster ID"
-  value       = module.eks.cluster_id
+output "cluster_name" {
+  value       = module.eks.cluster_name
+  description = "The name of the created EKS cluster."
+}
+
+output "cluster_version" {
+  value       = module.eks.cluster_version
+  description = "The version of Kubernetes running on the EKS cluster."
 }
 
 output "cluster_endpoint" {
-  description = "EKS control plane endpoint"
   value       = module.eks.cluster_endpoint
+  description = "The endpoint for the EKS Kubernetes API server."
 }
 
-output "cluster_oidc_provider_arn" {
-  description = "EKS OIDC provider ARN"
-  value       = module.eks.oidc_provider_arn
+output "access_entries" {
+  value = module.eks.access_entries
 }
 
-output "configure_kubectl" {
-  description = "Command to configure kubectl"
-  value       = module.eks.cluster_id != null ? "aws eks --region ${var.aws_region} update-kubeconfig --name ${module.eks.cluster_id}" : "EKS cluster is not yet created"
+output "oidc_provider" {
+  value = module.eks.oidc_provider
 }
 
+output "oidc_provider_arn" {
+  value = module.eks.oidc_provider_arn
 
-output "node_security_group_id" {
-  description = "Worker node security group ID"
-  value       = module.eks.cluster_security_group_id
 }
+output "acm_certificate_arn" {
+  value = module.acm_backend.acm_certificate_arn
 
-output "cluster_certificate_authority" {
-  description = "EKS cluster certificate authority"
-  value       = module.eks.cluster_certificate_authority_data
 }
-
-output "cluster_iam_role_name" {
-  description = "IAM role name for the EKS cluster"
-  value       = module.eks.cluster_iam_role_name
-}
-
-output "eks_version" {
-  description = "EKS Kubernetes version"
-  value       = module.eks.cluster_version
-}
-
-
