@@ -1,0 +1,7 @@
+Before you begin, ensure you have the following installed:
+
+https://medium.com/@rvisingh1221/create-an-eks-cluster-using-terraform-329b9dde068f
+
+Terraform v1.0 or later
+AWS CLI configured with appropriate credentials
+kubectl for interacting with your EKS cluster
