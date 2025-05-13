@@ -1,0 +1,11 @@
+#aws ec2 deregister-image --image-id ami-086ba143acb4dc86e --region ap-south-1
+# aws ec2 delete-snapshot --snapshot-id snap-09a62a43f29b28d6a --region ap-south-1
+#aws ec2 describe-images --filters Name=block-device-mapping.snapshot-id,Values=<SNAPSHOT_ID> --region <REGION> --query "Images[*].ImageId" --output text
+#aws ec2 describe-images --filters Name=block-device-mapping.snapshot-id,Values=snap-0d29d269eb81d516c --region us-east-1 --query "Images[*].ImageId" --output text
+
+
+আপনার যদি এই error দেখায়:
+cannot be loaded because running scripts is disabled
+তাহলে PowerShell Policy Allow করুন:
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+▶️ রান করার নিয়ম:.\delete-ami.ps1

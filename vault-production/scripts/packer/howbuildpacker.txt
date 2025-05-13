@@ -1,0 +1,5 @@
+cd packer-vault
+packer init .
+packer validate .
+packer build .
+packer build --var-file=example.pkrvars.hcl aws-ubuntu.pkr.hcl
