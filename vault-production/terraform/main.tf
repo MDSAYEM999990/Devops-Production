@@ -10,10 +10,11 @@ module "vpc" {
 }
 
 module "subnet" {
-  source        = "../modules/subnets"
-  vpc_id        = module.vpc.vpc_id
-  region        = var.region
-  subnet_a_cidr = "10.0.1.0/24"
+  source            = "../modules/subnets"
+  vpc_id            = module.vpc.vpc_id
+  region            = var.region
+  subnet_a_cidr     = "10.0.1.0/24"
+  security_group_id = module.security_group.security_group_id
 }
 
 module "iam" {
