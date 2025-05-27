@@ -3,6 +3,7 @@ resource "aws_instance" "vault" {
   instance_type          = var.instance_type
   subnet_id              = var.subnet_id
   vpc_security_group_ids = [var.sg_id]
+  associate_public_ip_address = false
   key_name               = var.key_name
   iam_instance_profile   = var.instance_profile_name
 
