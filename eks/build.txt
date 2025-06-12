@@ -1,0 +1,4 @@
+packer init .
+packer validate .
+packer build .
+packer build --var-file=eks.pkrvars.hcl eks.pkr.hcl
