@@ -10,7 +10,7 @@ packer {
 source "amazon-ebs" "eks-production-al2023" {
   ami_name      = "eks-production-al2023-{{timestamp}}"
   instance_type = "t3.medium"
-  region        = "us-east-1"
+  region        = "ap-south-1"
   source_ami_filter {
     filters = {
       name                = "amzn2-ami-kernel-5.10-hvm-*-x86_64-gp2"
